@@ -27,3 +27,8 @@ RUN sed -i 's/<Server port="8005"/<Server port="-1"/' /usr/local/tomcat/conf/ser
 EXPOSE 10000
 
 CMD ["catalina.sh", "run"]
+
+
+EXPOSE 10000
+
+CMD ["catalina.sh", "run"]
