@@ -1092,7 +1092,7 @@ if (detallesPendientes.length === 0) {
             "tablaRegistroResto"
         );
 
-        detallesPendientes.map(d => {
+        tabla.innerHTML = detallesPendientes.map(d => {
             const cantidad = Number(d.CANTIDAD);
             const idDetalle = Number(d.ID_DETALLE_PEDIDO);
 
