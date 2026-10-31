@@ -28,7 +28,3 @@ EXPOSE 10000
 
 CMD ["catalina.sh", "run"]
 
-
-EXPOSE 10000
-
-CMD ["catalina.sh", "run"]
