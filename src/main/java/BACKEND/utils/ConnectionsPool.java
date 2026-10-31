@@ -40,11 +40,22 @@ public class ConnectionsPool {
                     : "")
                 + ")";
 
-        this.conn = DriverManager.getConnection(
-                URL, USR, PASS
-        );
+        
+try {
+    Class.forName("oracle.jdbc.OracleDriver");
+} catch (ClassNotFoundException e) {
+    throw new SQLException(
+        "No se encontro el controlador JDBC de Oracle (ojdbc8)",
+        e
+    );
+}
 
-        return this.conn;
+this.conn = DriverManager.getConnection(
+        URL, USR, PASS
+);
+
+return this.conn;
+
     }
 
     public Connection conectarSQLSERVER()
