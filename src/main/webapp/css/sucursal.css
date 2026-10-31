@@ -170,3 +170,326 @@ th {
         align-items: flex-start;
     }
 }
+
+/* ==========================================
+   PANADERÍA SAN CARLOS
+   INVENTARIO DE SUCURSAL
+   ========================================== */
+
+:root {
+    --inv-primary: #2563eb;
+    --inv-primary-dark: #1d4ed8;
+    --inv-background: #f3f6fb;
+    --inv-text: #1e293b;
+    --inv-muted: #64748b;
+    --inv-border: #e2e8f0;
+    --inv-success: #15803d;
+    --inv-danger: #dc2626;
+}
+
+/* ENCABEZADO */
+
+body {
+    background: var(--inv-background);
+    color: var(--inv-text);
+    font-family: Arial, sans-serif;
+    margin: 0;
+}
+
+.encabezado {
+    background: #ffffff;
+    border-bottom: 1px solid var(--inv-border);
+    padding: 25px 35px;
+}
+
+.encabezado h1 {
+    margin: 8px 0;
+    font-size: 28px;
+    color: #0f172a;
+}
+
+.encabezado p {
+    margin: 0;
+    color: var(--inv-muted);
+}
+
+.etiqueta {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    color: var(--inv-primary);
+}
+
+/* CONTENEDOR */
+
+.contenedor {
+    max-width: 1150px;
+    margin: 35px auto;
+    padding: 0 20px;
+}
+
+.volver {
+    display: inline-flex;
+    align-items: center;
+    margin-bottom: 22px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--inv-primary);
+}
+
+.volver:hover {
+    color: var(--inv-primary-dark);
+    text-decoration: underline;
+}
+
+/* PANEL PRINCIPAL */
+
+.inventario-panel {
+    background: #ffffff;
+    border: 1px solid var(--inv-border);
+    border-radius: 14px;
+    padding: 28px;
+    box-shadow: 0 5px 18px rgba(15, 23, 42, 0.05);
+}
+
+.inventario-panel h2 {
+    margin: 0 0 10px;
+    font-size: 22px;
+}
+
+.inventario-panel > p {
+    color: var(--inv-muted);
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 24px;
+}
+
+/* TABLA */
+
+.tabla-contenedor {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.inventario-tabla {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+.inventario-tabla thead {
+    background: #f1f5f9;
+}
+
+.inventario-tabla th {
+    padding: 15px 14px;
+    text-align: left;
+    font-weight: 700;
+    color: #334155;
+    white-space: nowrap;
+}
+
+.inventario-tabla td {
+    padding: 14px;
+    border-bottom: 1px solid var(--inv-border);
+    vertical-align: middle;
+}
+
+.inventario-tabla tbody tr:hover {
+    background: #f8fafc;
+}
+
+.inventario-tabla tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* EXISTENCIAS */
+
+.existencia {
+    font-weight: 700;
+}
+
+.con-stock {
+    color: var(--inv-success);
+}
+
+.sin-stock {
+    color: var(--inv-danger);
+}
+
+/* BOTONES DE LA TABLA */
+
+.inventario-tabla button {
+    background: var(--inv-primary);
+    color: white;
+    border: none;
+    border-radius: 7px;
+    padding: 9px 15px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.inventario-tabla button:hover:not(:disabled) {
+    background: var(--inv-primary-dark);
+}
+
+.inventario-tabla button:disabled {
+    background: #e2e8f0;
+    color: #94a3b8;
+    cursor: not-allowed;
+}
+
+/* ==========================================
+   FORMULARIO ACTUALIZAR RESTO
+   ========================================== */
+
+#panelActualizarResto {
+    margin-top: 30px;
+    padding: 28px;
+    border: 1px solid #bfdbfe;
+    border-radius: 12px;
+    background: #f8fbff;
+    box-shadow: none;
+}
+
+#panelActualizarResto[hidden] {
+    display: none !important;
+}
+
+#panelActualizarResto h3 {
+    margin: 0 0 12px;
+    color: #1e40af;
+    font-size: 21px;
+}
+
+#nombreProductoResto {
+    display: inline-block;
+    margin: 0 0 24px;
+    padding: 8px 14px;
+    background: #dbeafe;
+    border-radius: 7px;
+    color: #1e40af;
+    font-weight: 700;
+    font-size: 15px;
+}
+
+/* CAMPOS DEL FORMULARIO */
+
+#formActualizarResto {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+    max-width: 480px;
+}
+
+#formActualizarResto label {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    color: #334155;
+    margin-top: 5px;
+}
+
+#formActualizarResto input[type="number"] {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px 14px;
+    font-size: 16px;
+    color: #0f172a;
+    background: #ffffff;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+#formActualizarResto input[type="number"]:focus {
+    border-color: var(--inv-primary);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+#existenciaActualResto {
+    background: #f1f5f9 !important;
+    color: #475569 !important;
+    cursor: not-allowed;
+}
+
+/* BOTONES DEL FORMULARIO */
+
+#formActualizarResto .acciones {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 16px;
+}
+
+#btnGuardarResto,
+#btnCancelarActualizacionResto {
+    border: none;
+    border-radius: 8px;
+    padding: 12px 22px;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+#btnGuardarResto {
+    background: var(--inv-primary);
+    color: #ffffff;
+}
+
+#btnGuardarResto:hover:not(:disabled) {
+    background: var(--inv-primary-dark);
+}
+
+#btnGuardarResto:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+#btnCancelarActualizacionResto {
+    background: #e2e8f0;
+    color: #334155;
+}
+
+#btnCancelarActualizacionResto:hover {
+    background: #cbd5e1;
+}
+
+/* DISPOSITIVOS MÓVILES */
+
+@media (max-width: 768px) {
+
+    .encabezado {
+        padding: 20px;
+    }
+
+    .encabezado h1 {
+        font-size: 23px;
+    }
+
+    .contenedor {
+        margin: 20px auto;
+        padding: 0 12px;
+    }
+
+    .inventario-panel {
+        padding: 18px;
+    }
+
+    .inventario-tabla {
+        min-width: 650px;
+    }
+
+    #panelActualizarResto {
+        padding: 18px;
+    }
+
+    #formActualizarResto {
+        max-width: 100%;
+    }
+}
