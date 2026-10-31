@@ -1,6 +1,5 @@
 
-
-
+package BACKEND.controller;
 import BACKEND.manager.InventarioSucursalManager;
 
 import java.util.HashMap;
