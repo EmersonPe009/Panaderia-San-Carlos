@@ -11,34 +11,40 @@ public final class Config {
     private XMLConfiguration config;
 
     public Config() {
-        try {
-            URL archivo = Config.class.getClassLoader()
-                    .getResource("config.xml");
 
-            if (archivo == null) {
+        // El XML es opcional.
+        // En Render utilizaremos variables de entorno.
+        URL archivo = Config.class.getClassLoader()
+                .getResource("config.xml");
+
+        if (archivo != null) {
+            try {
+                Configurations configs = new Configurations();
+                this.config = configs.xml(archivo);
+
+            } catch (ConfigurationException e) {
                 throw new IllegalStateException(
-                    "No se encontro config.xml en el classpath"
+                        "Error al cargar config.xml", e
                 );
             }
-
-            Configurations configs = new Configurations();
-            this.config = configs.xml(archivo);
-
-        } catch (ConfigurationException e) {
-            throw new IllegalStateException(
-                "Error al cargar config.xml", e
-            );
         }
     }
 
     private String obtenerValor(String variable, String claveXML) {
+
         String valor = System.getenv(variable);
 
         if (valor != null && !valor.trim().isEmpty()) {
             return valor.trim();
         }
 
-        return config.getString(claveXML);
+        if (config != null) {
+            return config.getString(claveXML);
+        }
+
+        throw new IllegalStateException(
+                "Falta la variable de entorno: " + variable
+        );
     }
 
     public String getDBHost() {
@@ -66,6 +72,6 @@ public final class Config {
     }
 
     public String getSistemaNombre() {
-        return config.getString("sistema.nombre");
+        return "BACKEND";
     }
 }
