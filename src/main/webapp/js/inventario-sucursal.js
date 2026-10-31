@@ -39,7 +39,7 @@ async function cargarInventario() {
 
             const fila = tabla.insertRow();
             const celda = fila.insertCell();
-            celda.colSpan = 4;
+            celda.colSpan = 5;
             celda.textContent = "No hay productos registrados.";
             return;
         }
@@ -68,6 +68,22 @@ async function cargarInventario() {
                 cantidad > 0
                     ? "existencia con-stock"
                     : "existencia sin-stock";
+                    
+                    
+const accion = fila.insertCell();
+
+const boton = document.createElement("button");
+boton.type = "button";
+boton.textContent = "Actualizar RESTO";
+
+boton.disabled = cantidad <= 0;
+
+boton.addEventListener("click", function () {
+    abrirActualizarResto(producto, cantidad);
+});
+
+accion.appendChild(boton);
+
         });
 
     } catch (error) {
@@ -78,8 +94,127 @@ async function cargarInventario() {
 
         const fila = tabla.insertRow();
         const celda = fila.insertCell();
-        celda.colSpan = 4;
+        celda.colSpan = 5;
         celda.textContent =
             "No fue posible cargar el inventario.";
     }
+    
 }
+
+
+function abrirActualizarResto(producto, cantidad) {
+
+    document.getElementById("idProductoResto").value =
+        producto.ID_PRODUCTO;
+
+    document.getElementById("nombreProductoResto")
+        .textContent = producto.NOMBRE;
+
+    document.getElementById("existenciaActualResto")
+        .value = cantidad;
+
+    const nuevaExistencia =
+        document.getElementById("nuevaExistenciaResto");
+
+    nuevaExistencia.value = "";
+    nuevaExistencia.max = cantidad;
+
+    document.getElementById("panelActualizarResto")
+        .hidden = false;
+
+    nuevaExistencia.focus();
+}
+
+document.getElementById("btnCancelarActualizacionResto")
+    .addEventListener("click", function () {
+
+        document.getElementById("panelActualizarResto")
+            .hidden = true;
+    });
+
+document.getElementById("formActualizarResto")
+    .addEventListener("submit", async function (evento) {
+
+        evento.preventDefault();
+
+        const idProducto = Number(
+            document.getElementById("idProductoResto").value
+        );
+
+        const campoNuevaExistencia =
+    document.getElementById("nuevaExistenciaResto");
+
+if (campoNuevaExistencia.value.trim() === "") {
+    alert("Debes ingresar la cantidad de productos restantes.");
+    campoNuevaExistencia.focus();
+    return;
+}
+
+const nuevaExistencia = Number(campoNuevaExistencia.value);
+        const existenciaActual = Number(
+            document.getElementById("existenciaActualResto").value
+        );
+
+        if (!Number.isFinite(nuevaExistencia) ||
+                nuevaExistencia < 0 ||
+                nuevaExistencia > existenciaActual) {
+
+            alert("El RESTO debe estar entre 0 y la existencia actual.");
+            return;
+        }
+        if (nuevaExistencia === existenciaActual) {
+    alert("La nueva existencia es igual a la actual. No hay cambios que guardar.");
+    return;
+}
+
+        if (!confirm(
+            "¿Confirmar la nueva existencia de este producto?"
+        )) {
+            return;
+        }
+
+        const boton = document.getElementById("btnGuardarResto");
+        boton.disabled = true;
+
+        try {
+
+            const respuesta = await fetch(
+                window.APP_CONTEXT +
+                "/webapi/InventarioSucursal/ActualizarResto",
+                {
+                    method: "POST",
+                    credentials: "same-origin",
+                    headers: {
+                        "Content-Type": "application/json",
+                        "Accept": "application/json"
+                    },
+                    body: JSON.stringify({
+                        id_producto: idProducto,
+                        nueva_existencia: nuevaExistencia
+                    })
+                }
+            );
+
+            const resultado = await respuesta.json();
+
+            if (!respuesta.ok || !resultado.EXITO) {
+                throw new Error(
+                    resultado.MENSAJE ||
+                    "No se pudo actualizar el inventario."
+                );
+            }
+
+            alert(resultado.MENSAJE);
+
+            document.getElementById("panelActualizarResto")
+                .hidden = true;
+
+            await cargarInventario();
+
+        } catch (error) {
+            alert(error.message);
+        } finally {
+            boton.disabled = false;
+        }
+    });
+

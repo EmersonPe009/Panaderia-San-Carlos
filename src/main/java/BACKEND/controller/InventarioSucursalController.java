@@ -1,7 +1,9 @@
 
 package BACKEND.controller;
 import BACKEND.manager.InventarioSucursalManager;
-
+import javax.ws.rs.POST;
+import javax.ws.rs.Consumes;
+import java.math.BigDecimal;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -94,4 +96,99 @@ if (!"SUCURSAL".equalsIgnoreCase(String.valueOf(rol))) {
                     .build();
         }
     }
+
+
+@POST
+@Path("/ActualizarResto")
+@Consumes(MediaType.APPLICATION_JSON)
+@Produces(MediaType.APPLICATION_JSON)
+public Response actualizarResto(
+        Map<String, Object> datos,
+        @Context HttpServletRequest request) {
+
+    HttpSession sesion = request.getSession(false);
+
+    if (sesion == null ||
+            sesion.getAttribute("ID_USUARIO") == null) {
+        return Response.status(401)
+                .entity("{\"MENSAJE\":\"Sesion no iniciada\"}")
+                .build();
+    }
+
+    if (!"SUCURSAL".equalsIgnoreCase(
+            String.valueOf(sesion.getAttribute("ROL")))) {
+        return Response.status(403)
+                .entity("{\"MENSAJE\":\"Acceso no autorizado\"}")
+                .build();
+    }
+
+    Object idUsuarioObj = sesion.getAttribute("ID_USUARIO");
+    Object idSucursalObj = sesion.getAttribute("ID_SUCURSAL");
+
+    if (!(idUsuarioObj instanceof Number) ||
+            !(idSucursalObj instanceof Number)) {
+        return Response.status(403)
+                .entity("{\"MENSAJE\":\"Sesion invalida\"}")
+                .build();
+    }
+
+    if (datos == null) {
+        return Response.status(400)
+                .entity("{\"MENSAJE\":\"Faltan datos\"}")
+                .build();
+    }
+
+    int idUsuario = ((Number) idUsuarioObj).intValue();
+    int idSucursal = ((Number) idSucursalObj).intValue();
+
+    int idProducto;
+    BigDecimal nuevaExistencia;
+
+    try {
+        idProducto = Integer.parseInt(
+                String.valueOf(datos.get("id_producto"))
+        );
+
+        nuevaExistencia = new BigDecimal(
+                String.valueOf(datos.get("nueva_existencia"))
+        );
+
+        if (idProducto <= 0 ||
+                nuevaExistencia.compareTo(BigDecimal.ZERO) < 0) {
+            throw new IllegalArgumentException();
+        }
+
+    } catch (Exception e) {
+        return Response.status(400)
+                .entity("{\"MENSAJE\":\"Producto o cantidad invalida\"}")
+                .build();
+    }
+
+    try {
+        String mensaje = manager.actualizarResto(
+                idSucursal,
+                idProducto,
+                idUsuario,
+                nuevaExistencia
+        );
+
+        Map<String, Object> respuesta = new HashMap<>();
+        respuesta.put("EXITO", true);
+        respuesta.put("MENSAJE", mensaje);
+
+        return Response.ok(respuesta).build();
+
+    } catch (Exception e) {
+        e.printStackTrace();
+
+        Map<String, Object> error = new HashMap<>();
+        error.put("EXITO", false);
+        error.put("MENSAJE", "No se pudo actualizar el RESTO.");
+
+        return Response.status(400)
+                .entity(error)
+                .build();
+    }
+}
+
 }

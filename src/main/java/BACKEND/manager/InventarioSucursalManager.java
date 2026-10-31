@@ -82,4 +82,47 @@ public class InventarioSucursalManager {
 
         return inventario;
     }
+    
+    
+    
+
+public String actualizarResto(
+        int idSucursal,
+        int idProducto,
+        int idUsuario,
+        java.math.BigDecimal nuevaExistencia
+) throws Exception {
+
+    String sql =
+        "{call PKG_INVENTARIO_SUCURSAL.ACTUALIZAR_RESTO(?, ?, ?, ?, ?)}";
+
+    ConnectionsPool pool = new ConnectionsPool();
+
+    try (Connection conn = pool.conectar()) {
+
+        conn.setAutoCommit(false);
+
+        try (CallableStatement stmt = conn.prepareCall(sql)) {
+
+            stmt.setInt(1, idSucursal);
+            stmt.setInt(2, idProducto);
+            stmt.setInt(3, idUsuario);
+            stmt.setBigDecimal(4, nuevaExistencia);
+            stmt.registerOutParameter(5, java.sql.Types.VARCHAR);
+
+            stmt.execute();
+
+            String mensaje = stmt.getString(5);
+
+            conn.commit();
+            return mensaje;
+
+        } catch (Exception e) {
+            conn.rollback();
+            throw e;
+        }
+    }
+}
+
+
 }

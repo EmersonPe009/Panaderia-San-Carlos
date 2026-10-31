@@ -537,14 +537,7 @@ function mostrarPedidos() {
                                 </button>
                             ` : ""}
                             
-${ES_EMPLEADO && estado === "DESPACHADO" ? `
-    <button
-        class="btn btn-ver"
-        data-pedido-accion="resto"
-        data-id="${id}">
-        Registrar RESTO
-    </button>
-` : ""}
+
 
                         </div>
                     </td>

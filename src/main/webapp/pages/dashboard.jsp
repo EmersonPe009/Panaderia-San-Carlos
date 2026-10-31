@@ -98,7 +98,7 @@ if (!"ADMINISTRADOR".equalsIgnoreCase(rolUsuario)) {
     <!-- MENÚ PRINCIPAL -->
     <nav class="menu-principal">
 
-        <a href="${pageContext.request.contextPath}/dashboard.jsp">
+        <a href="${pageContext.request.contextPath}/pages/dashboard.jsp">
             PANEL PRINCIPAL
         </a>
 

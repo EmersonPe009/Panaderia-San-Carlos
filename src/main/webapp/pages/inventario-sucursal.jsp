@@ -125,6 +125,7 @@
                         <th>Código</th>
                         <th>Unidad</th>
                         <th>Existencia</th>
+                        <th>Acción</th>
                     </tr>
                 </thead>
 
@@ -137,6 +138,51 @@
                 </tbody>
             </table>
         </div>
+
+<div id="panelActualizarResto"
+     class="inventario-panel"
+     hidden>
+
+    <h3>Actualizar RESTO</h3>
+
+    <p id="nombreProductoResto"></p>
+
+    <form id="formActualizarResto">
+
+        <input type="hidden"
+               id="idProductoResto">
+
+        <label for="existenciaActualResto">
+            Existencia actual
+        </label>
+
+        <input type="number"
+               id="existenciaActualResto"
+               readonly>
+
+        <label for="nuevaExistenciaResto">
+            ¿Cuántos productos quedan?
+        </label>
+
+        <input type="number"
+               id="nuevaExistenciaResto"
+               min="0"
+               step="0.001"
+               required>
+
+        <div class="acciones">
+            <button type="submit"
+                    id="btnGuardarResto">
+                Guardar RESTO
+            </button>
+
+            <button type="button"
+                    id="btnCancelarActualizacionResto">
+                Cancelar
+            </button>
+        </div>
+    </form>
+</div>
 
     </section>
 
