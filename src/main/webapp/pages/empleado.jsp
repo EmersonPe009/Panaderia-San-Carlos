@@ -135,6 +135,22 @@
         </button>
     </article>
 
+<article class="opcion">
+    <div class="simbolo">▣</div>
+
+    <h3>Mi inventario</h3>
+
+    <p>
+        Consulta los productos disponibles
+        y las existencias actuales de tu sucursal.
+    </p>
+
+    <button type="button"
+            onclick="abrirInventario()">
+        Consultar inventario
+    </button>
+</article>
+
 </section>
 
 

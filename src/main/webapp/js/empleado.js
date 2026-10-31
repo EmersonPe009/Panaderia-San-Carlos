@@ -90,3 +90,9 @@ async function cargarPedidosSucursal() {
             "No se pudieron cargar los pedidos.";
     }
 }
+
+
+function abrirInventario() {
+    window.location.href =
+        window.APP_CONTEXT + "/pages/inventario-sucursal.jsp";
+}
