@@ -36,30 +36,21 @@ public class AutenticacionFilter implements Filter {
 
         HttpServletRequest req =
                 (HttpServletRequest) request;
-        
-        
-
-HttpServletRequest httpRequest = (HttpServletRequest) request;
-HttpServletResponse httpResponse = (HttpServletResponse) response;
-
-String ruta = httpRequest.getRequestURI();
-String contexto = httpRequest.getContextPath();
-
-// Permitir el login sin una sesión iniciada
-if (ruta.equals(contexto + "/webapi/Usuarios/Login")) {
-    chain.doFilter(request, response);
-    return;
-}
-
-
-if (ruta.equals(contexto + "/webapi/Usuarios/Login")) {
-    chain.doFilter(request, response);
-    return;
-}
-
 
         HttpServletResponse res =
                 (HttpServletResponse) response;
+
+        String ruta = req.getRequestURI();
+        String contexto = req.getContextPath();
+
+        // Servicios que no necesitan una sesión
+        if (ruta.equals(contexto + "/webapi/Usuarios/Login")
+                || ruta.equals(contexto + "/webapi/myresource")
+                || ruta.equals(contexto + "/webapi/myresource/json")) {
+
+            chain.doFilter(request, response);
+            return;
+        }
 
         HttpSession sesion = req.getSession(false);
 

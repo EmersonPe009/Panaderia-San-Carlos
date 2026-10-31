@@ -7,7 +7,7 @@
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0">
 
-    <title>Iniciar sesión | San Carlos</title>
+    <title>Iniciar sesión | San Carlos UMG GUATEMALA</title>
 
     <link rel="stylesheet"
           href="${pageContext.request.contextPath}/css/login.css">
@@ -32,7 +32,7 @@
             </div>
 
             <p class="presentacion-pie">
-                PANADERÍA SAN CARLOS © 2026
+                PANADERÍA SAN CARLOS UMG GUATEMALA © 2026
             </p>
         </section>
 
