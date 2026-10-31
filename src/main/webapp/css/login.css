@@ -1,0 +1,191 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    color: #191919;
+}
+
+.login-pagina {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 100vh;
+}
+
+/* PANEL IZQUIERDO */
+
+.login-presentacion {
+    background:
+        linear-gradient(
+            rgba(0, 0, 0, 0.65),
+            rgba(0, 0, 0, 0.75)
+        ),
+        url("../img/panaderia-fondo.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-color: #24201c;
+
+    color: #fff;
+    padding: 45px 8%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.login-logo {
+    font-size: 25px;
+    font-weight: 800;
+    letter-spacing: 3px;
+    text-decoration: none;
+    color: #fff;
+}
+
+.presentacion-contenido p {
+    font-size: 11px;
+    letter-spacing: 3px;
+    color: #e9b77c;
+    margin-bottom: 20px;
+}
+
+.presentacion-contenido h1 {
+    font-family: Georgia, serif;
+    font-size: clamp(40px, 5vw, 70px);
+    font-weight: normal;
+    line-height: 1.2;
+    margin-bottom: 25px;
+}
+
+.presentacion-contenido span {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #ddd;
+}
+
+.presentacion-pie {
+    font-size: 11px;
+    letter-spacing: 2px;
+    color: #ccc;
+}
+
+/* PANEL DERECHO */
+
+.login-formulario-contenedor {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 30px;
+    background-color: #faf9f7;
+}
+
+.login-formulario {
+    width: 100%;
+    max-width: 390px;
+}
+
+.etiqueta-login {
+    font-size: 11px;
+    letter-spacing: 3px;
+    color: #a67b4e;
+    margin-bottom: 18px;
+}
+
+.login-formulario h2 {
+    font-family: Georgia, serif;
+    font-size: 38px;
+    font-weight: normal;
+    margin-bottom: 15px;
+}
+
+.descripcion-login {
+    color: #777;
+    font-size: 14px;
+    margin-bottom: 35px;
+}
+
+.campo-login {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 23px;
+}
+
+.campo-login label {
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.campo-login input {
+    padding: 15px;
+    border: 1px solid #ddd;
+    background: #fff;
+    font-family: inherit;
+    font-size: 14px;
+    outline: none;
+}
+
+.campo-login input:focus {
+    border-color: #191919;
+}
+
+.btn-ingresar {
+    width: 100%;
+    padding: 17px;
+    background: #191919;
+    color: #fff;
+    border: none;
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+
+.btn-ingresar:hover {
+    background: #444;
+}
+
+.mensaje-login {
+    margin-top: 15px;
+    font-size: 13px;
+    color: #a33;
+}
+
+.volver-inicio {
+    display: inline-block;
+    margin-top: 35px;
+    color: #666;
+    font-size: 13px;
+    text-decoration: none;
+}
+
+.volver-inicio:hover {
+    color: #191919;
+}
+
+@media (max-width: 800px) {
+    .login-pagina {
+        grid-template-columns: 1fr;
+    }
+
+    .login-presentacion {
+        min-height: 260px;
+        padding: 30px;
+    }
+
+    .presentacion-contenido h1 {
+        font-size: 38px;
+    }
+
+    .presentacion-pie {
+        display: none;
+    }
+
+    .login-formulario-contenedor {
+        min-height: 500px;
+    }
+}

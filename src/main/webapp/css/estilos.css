@@ -1,0 +1,685 @@
+
+/* =====================================
+   PANADERÍA SAN CARLOS
+   ESTILOS GENERALES
+===================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background-color: #f8f8f6;
+    color: #191919;
+    min-height: 100vh;
+}
+
+/* =====================================
+   ENCABEZADO
+===================================== */
+
+.encabezado {
+    background-color: #ffffff;
+    padding: 28px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.marca h1 {
+    font-family: Georgia, serif;
+    font-size: 34px;
+    letter-spacing: 5px;
+    font-weight: normal;
+}
+
+.marca p {
+    font-size: 10px;
+    letter-spacing: 3px;
+    color: #777777;
+    margin-top: 7px;
+}
+
+.usuario {
+    font-size: 13px;
+    color: #555555;
+}
+
+/* =====================================
+   MENÚ DE NAVEGACIÓN
+===================================== */
+
+.menu-principal {
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 35px;
+    padding: 20px;
+    border-bottom: 1px solid #dddddd;
+}
+
+.menu-principal a {
+    text-decoration: none;
+    color: #333333;
+    font-size: 12px;
+    letter-spacing: 1.5px;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.menu-principal a:hover {
+    color: #999999;
+}
+
+/* =====================================
+   CONTENIDO PRINCIPAL
+===================================== */
+
+.contenido {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 25px;
+}
+
+/* =====================================
+   BIENVENIDA
+===================================== */
+
+.bienvenida {
+    margin-bottom: 65px;
+    text-align: center;
+}
+
+.subtitulo {
+    font-size: 11px;
+    letter-spacing: 3px;
+    color: #888888;
+    margin-bottom: 20px;
+}
+
+.bienvenida h2 {
+    font-family: Georgia, serif;
+    font-size: 43px;
+    font-weight: normal;
+    margin-bottom: 20px;
+}
+
+.descripcion {
+    max-width: 650px;
+    margin: 0 auto;
+    font-size: 15px;
+    color: #666666;
+    line-height: 1.9;
+}
+
+/* =====================================
+   MÓDULOS
+===================================== */
+
+.modulos h2 {
+    font-family: Georgia, serif;
+    font-size: 27px;
+    font-weight: normal;
+    margin-bottom: 30px;
+}
+
+.contenedor-tarjetas {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+/* =====================================
+   TARJETAS
+===================================== */
+
+.tarjeta {
+    background-color: #ffffff;
+    border: 1px solid #e2e2e2;
+    padding: 32px;
+    min-height: 230px;
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.3s ease;
+}
+
+.tarjeta:hover {
+    border-color: #191919;
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.07);
+}
+
+.numero {
+    font-size: 12px;
+    color: #999999;
+    margin-bottom: 25px;
+}
+
+.tarjeta h3 {
+    font-family: Georgia, serif;
+    font-size: 21px;
+    font-weight: normal;
+    margin-bottom: 15px;
+}
+
+.tarjeta p {
+    font-size: 13px;
+    line-height: 1.8;
+    color: #777777;
+}
+
+.flecha {
+    margin-top: auto;
+    padding-top: 18px;
+    text-align: right;
+    font-size: 22px;
+}
+
+/* =====================================
+   PIE DE PÁGINA
+===================================== */
+
+.pie-pagina {
+    background-color: #191919;
+    color: #ffffff;
+    text-align: center;
+    padding: 25px;
+    font-size: 11px;
+    letter-spacing: 2px;
+}
+
+/* =====================================
+   DISEÑO RESPONSIVE
+===================================== */
+
+@media (max-width: 900px) {
+    .contenedor-tarjetas {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .menu-principal {
+        gap: 18px;
+    }
+}
+
+@media (max-width: 600px) {
+    .encabezado {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+
+    .marca h1 {
+        font-size: 28px;
+    }
+
+    .contenido {
+        padding: 35px 18px;
+    }
+
+    .bienvenida h2 {
+        font-size: 32px;
+    }
+
+    .contenedor-tarjetas {
+        grid-template-columns: 1fr;
+    }
+
+    .menu-principal {
+        gap: 15px;
+    }
+
+    .menu-principal a {
+        font-size: 10px;
+    }
+}
+
+
+
+/* =====================================
+   TABLAS DEL SISTEMA
+===================================== */
+
+.tabla-contenedor {
+    width: 100%;
+    overflow-x: auto;
+    background-color: #ffffff;
+    border: 1px solid #e2e2e2;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+}
+
+thead {
+    background-color: #191919;
+    color: #ffffff;
+}
+
+th {
+    padding: 16px;
+    text-align: left;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+}
+
+td {
+    padding: 15px 16px;
+    border-bottom: 1px solid #eeeeee;
+    color: #444444;
+}
+
+tbody tr:hover {
+    background-color: #f5f5f5;
+}
+
+tbody tr:last-child td {
+    border-bottom: none;
+}
+
+
+
+/* =====================================
+   BUSCADOR DE PRODUCTOS
+===================================== */
+
+.barra-herramientas {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+}
+
+#buscarProducto {
+    width: 320px;
+    max-width: 100%;
+    padding: 13px 16px;
+    border: 1px solid #d5d5d5;
+    background-color: #ffffff;
+    color: #191919;
+    font-family: inherit;
+    font-size: 13px;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+#buscarProducto:focus {
+    border-color: #191919;
+}
+
+@media (max-width: 600px) {
+    .barra-herramientas {
+        justify-content: stretch;
+    }
+
+    #buscarProducto {
+        width: 100%;
+    }
+}
+
+/* =====================================
+   FILTROS DE PRODUCTOS
+===================================== */
+
+.barra-herramientas {
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.filtros-productos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.filtro {
+    padding: 11px 16px;
+    border: 1px solid #d5d5d5;
+    background-color: #ffffff;
+    color: #333333;
+    font-family: inherit;
+    font-size: 12px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.filtro:hover {
+    border-color: #191919;
+}
+
+.filtro.activo {
+    background-color: #191919;
+    color: #ffffff;
+    border-color: #191919;
+}
+
+@media (max-width: 600px) {
+    .filtros-productos {
+        width: 100%;
+    }
+
+    .filtro {
+        flex: 1;
+    }
+}
+
+
+/* =====================================
+   REGISTRO DE PRODUCTOS
+===================================== */
+
+.acciones-productos {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+}
+
+.btn-principal {
+    background: #191919;
+    color: #fff;
+    border: 1px solid #191919;
+    padding: 13px 22px;
+    font: inherit;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.btn-principal:hover {
+    background: #444;
+}
+
+.btn-secundario {
+    background: #fff;
+    color: #191919;
+    border: 1px solid #ccc;
+    padding: 13px 22px;
+    font: inherit;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.modal-producto {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    background: rgba(0, 0, 0, 0.55);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.modal-producto[hidden] {
+    display: none;
+}
+
+.modal-contenido {
+    background: #fff;
+    width: 100%;
+    max-width: 620px;
+    max-height: 90vh;
+    overflow-y: auto;
+    padding: 35px;
+}
+
+.modal-encabezado {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.modal-encabezado h2 {
+    font-family: Georgia, serif;
+    font-size: 27px;
+    font-weight: normal;
+}
+
+.btn-cerrar {
+    border: none;
+    background: transparent;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.campo-formulario {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 18px;
+    flex: 1;
+}
+
+.campo-formulario label {
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.campo-formulario input,
+.campo-formulario select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #d5d5d5;
+    background: #fff;
+    font: inherit;
+    font-size: 13px;
+}
+
+.fila-formulario {
+    display: flex;
+    gap: 18px;
+}
+
+.nota-formulario {
+    font-size: 12px;
+    color: #777;
+    line-height: 1.7;
+}
+
+.acciones-formulario {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 25px;
+}
+
+@media (max-width: 600px) {
+    .fila-formulario {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .modal-contenido {
+        padding: 22px;
+    }
+}
+
+
+/* =====================================
+   ACCIONES DE PRODUCTOS
+===================================== */
+
+.btn-editar {
+    background: #ffffff;
+    color: #191919;
+    border: 1px solid #191919;
+    padding: 8px 15px;
+    font-family: inherit;
+    font-size: 12px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.btn-editar:hover {
+    background: #191919;
+    color: #ffffff;
+}
+
+
+/* =====================================
+   ACTIVAR Y DESACTIVAR PRODUCTOS
+===================================== */
+
+.btn-activar,
+.btn-desactivar {
+    padding: 8px 15px;
+    font-family: inherit;
+    font-size: 12px;
+    cursor: pointer;
+    margin-left: 8px;
+    transition: all 0.2s;
+}
+
+.btn-activar {
+    background: #191919;
+    color: #ffffff;
+    border: 1px solid #191919;
+}
+
+.btn-activar:hover {
+    background: #444444;
+}
+
+.btn-desactivar {
+    background: #ffffff;
+    color: #777777;
+    border: 1px solid #cccccc;
+}
+
+.btn-desactivar:hover {
+    color: #191919;
+    border-color: #191919;
+}
+
+.btn-activar:disabled,
+.btn-desactivar:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+
+
+/* INFORMACIÓN DEL USUARIO AUTENTICADO */
+
+.usuario-sesion {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin: 20px 0;
+}
+
+.usuario-sesion span {
+    font-size: 15px;
+    color: #191919;
+}
+
+.usuario-sesion small {
+    font-size: 12px;
+    color: #777;
+}
+
+
+.btn-cerrar-sesion {
+    background-color: #8b3026;
+    color: white;
+    border: none;
+    padding: 11px 20px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.btn-cerrar-sesion:hover {
+    background-color: #672018;
+}
+
+
+
+/* =====================================
+   DASHBOARD ADMINISTRADOR
+===================================== */
+
+.dashboard-seccion {
+    margin-bottom: 55px;
+}
+
+.dashboard-seccion > h2,
+.dashboard-titulo h2 {
+    font-family: Georgia, serif;
+    font-size: 27px;
+    font-weight: normal;
+    margin-bottom: 25px;
+}
+
+.dashboard-indicadores {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+}
+
+.indicador {
+    background: #ffffff;
+    border: 1px solid #e2e2e2;
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.indicador span {
+    color: #777777;
+    font-size: 13px;
+}
+
+.indicador strong {
+    font-family: Georgia, serif;
+    font-size: 38px;
+    font-weight: normal;
+    color: #191919;
+}
+
+.dashboard-titulo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.dashboard-titulo h2 {
+    margin-bottom: 10px;
+}
+
+.dashboard-titulo p {
+    font-size: 13px;
+    color: #777777;
+}
+
+.dashboard-seccion .tabla-contenedor {
+    margin-top: 15px;
+}
+
+@media (max-width: 900px) {
+    .dashboard-indicadores {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .dashboard-indicadores {
+        grid-template-columns: 1fr;
+    }
+}

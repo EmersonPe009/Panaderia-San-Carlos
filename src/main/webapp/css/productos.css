@@ -1,0 +1,1070 @@
+
+/* =========================================
+   PANADERÍA SAN CARLOS
+   NUEVO DISEÑO - GESTIÓN DE PRODUCTOS
+========================================= */
+
+body {
+    background: #f5f6f8;
+    color: #202124;
+}
+
+/* ENCABEZADO */
+
+.encabezado {
+    background: #ffffff;
+    padding: 20px 4%;
+    border-bottom: 1px solid #e8e9ec;
+}
+
+.marca h1 {
+    font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 25px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.marca p {
+    font-size: 10px;
+    letter-spacing: 1.5px;
+}
+
+/* NAVEGACIÓN */
+
+.menu-principal {
+    background: #ffffff;
+    justify-content: flex-start;
+    padding: 17px 4%;
+    gap: 30px;
+    border-bottom: 1px solid #e8e9ec;
+}
+
+.menu-principal a {
+    font-size: 12px;
+    letter-spacing: 0.4px;
+}
+
+.menu-principal a:hover {
+    color: #9a683d;
+}
+
+/* CONTENIDO */
+
+.contenido {
+    max-width: 1500px;
+    padding: 35px 4%;
+}
+
+.bienvenida {
+    text-align: left;
+    margin-bottom: 30px;
+}
+
+.subtitulo {
+    color: #98704b;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    margin-bottom: 12px;
+}
+
+.bienvenida h2 {
+    font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 30px;
+    font-weight: 750;
+    margin-bottom: 10px;
+}
+
+.descripcion {
+    max-width: none;
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* PANEL PRINCIPAL */
+
+.modulos {
+    background: #ffffff;
+    border: 1px solid #e7e8eb;
+    border-radius: 16px;
+    padding: 28px;
+    box-shadow: 0 5px 24px rgba(0, 0, 0, 0.025);
+}
+
+.modulos h2 {
+    font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 22px;
+}
+
+/* BOTONES */
+
+.btn-principal {
+    background: #202124;
+    border: 1px solid #202124;
+    border-radius: 9px;
+    padding: 12px 20px;
+    font-weight: 600;
+    transition: background 0.2s;
+}
+
+.btn-principal:hover {
+    background: #44464b;
+}
+
+.btn-secundario {
+    border-radius: 9px;
+}
+
+.acciones-productos {
+    margin-bottom: 22px;
+}
+
+/* FILTROS Y BUSCADOR */
+
+.barra-herramientas {
+    background: #f8f9fb;
+    border: 1px solid #eff0f2;
+    border-radius: 12px;
+    padding: 15px;
+    margin-bottom: 24px;
+    gap: 14px;
+}
+
+.filtro {
+    border: 1px solid transparent;
+    border-radius: 8px;
+    background: #ffffff;
+    padding: 11px 16px;
+    font-weight: 600;
+}
+
+.filtro.activo {
+    background: #202124;
+    color: #ffffff;
+}
+
+#buscarProducto {
+    border: 1px solid #e0e2e6;
+    border-radius: 9px;
+    padding: 12px 16px;
+    width: 330px;
+}
+
+/* TABLA */
+
+.tabla-contenedor {
+    border: 1px solid #e8e9ec;
+    border-radius: 12px;
+    overflow-x: auto;
+}
+
+#tablaProductos {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+}
+
+#tablaProductos thead {
+    background: #f7f8fa;
+    color: #646872;
+}
+
+#tablaProductos th {
+    padding: 17px 15px;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-bottom: 1px solid #e8e9ec;
+}
+
+#tablaProductos td {
+    padding: 16px 15px;
+    border-bottom: 1px solid #f0f1f3;
+}
+
+#tablaProductos tbody tr:hover {
+    background: #faf8f5;
+}
+
+/* ACCIONES DE TABLA */
+
+.btn-editar,
+.btn-activar,
+.btn-desactivar {
+    border-radius: 7px;
+    padding: 8px 12px;
+    font-size: 12px;
+}
+
+.btn-editar {
+    border-color: #d5d8dd;
+}
+
+.btn-activar {
+    background: #287a50;
+    border-color: #287a50;
+}
+
+.btn-activar:hover {
+    background: #20643f;
+}
+
+.btn-desactivar {
+    background: #ffffff;
+    color: #a44b42;
+    border-color: #e6c9c6;
+}
+
+.btn-desactivar:hover {
+    color: #87372f;
+    border-color: #a44b42;
+}
+
+/* FORMULARIO MODAL */
+
+.modal-producto {
+    background: rgba(20, 24, 30, 0.65);
+}
+
+.modal-contenido {
+    border-radius: 16px;
+    padding: 30px;
+    box-shadow: 0 24px 65px rgba(0, 0, 0, 0.18);
+}
+
+.modal-encabezado h2 {
+    font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 23px;
+    font-weight: 700;
+}
+
+.campo-formulario input,
+.campo-formulario select {
+    border-radius: 8px;
+}
+
+.campo-formulario input:focus,
+.campo-formulario select:focus {
+    outline: 2px solid #d5b38c;
+    outline-offset: 1px;
+}
+
+/* PIE DE PÁGINA */
+
+.pie-pagina {
+    background: #ffffff;
+    color: #777b83;
+    border-top: 1px solid #e8e9ec;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 768px) {
+
+    .contenido {
+        padding: 25px 16px;
+    }
+
+    .modulos {
+        padding: 18px;
+    }
+
+    .bienvenida h2 {
+        font-size: 25px;
+    }
+
+    .barra-herramientas {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    #buscarProducto {
+        width: 100%;
+    }
+
+    .filtros-productos {
+        width: 100%;
+    }
+
+    .filtro {
+        flex: 1;
+    }
+}
+
+
+/* =========================================
+   BOTÓN ANIMADO - NUEVO PRODUCTO
+========================================= */
+
+#btnNuevoProducto.button-86 {
+    all: unset;
+    box-sizing: border-box;
+    min-width: 170px;
+    min-height: 48px;
+    font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    background: transparent;
+    border: none;
+    position: relative;
+    color: #f0f0f0;
+    cursor: pointer;
+    z-index: 1;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+#btnNuevoProducto.button-86::after,
+#btnNuevoProducto.button-86::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+    transition: all 0.4s;
+}
+
+#btnNuevoProducto.button-86::before {
+    transform: translate(0%, 0%);
+    width: 100%;
+    height: 100%;
+    background: #28282d;
+    border-radius: 10px;
+}
+
+#btnNuevoProducto.button-86::after {
+    transform: translate(10px, 10px);
+    width: 35px;
+    height: 35px;
+    background: #ffffff15;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border-radius: 50px;
+}
+
+#btnNuevoProducto.button-86:hover::before {
+    transform: translate(5%, 20%);
+    width: 110%;
+    height: 110%;
+}
+
+#btnNuevoProducto.button-86:hover::after {
+    border-radius: 10px;
+    transform: translate(0, 0);
+    width: 100%;
+    height: 100%;
+}
+
+#btnNuevoProducto.button-86:active::after {
+    transition: 0s;
+    transform: translate(0, 5%);
+}
+
+#btnNuevoProducto.button-86:focus-visible {
+    outline: 3px solid #b58a62;
+    outline-offset: 6px;
+    border-radius: 10px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    #btnNuevoProducto.button-86::before,
+    #btnNuevoProducto.button-86::after {
+        transition: none;
+    }
+}
+
+
+
+/* =========================================
+   MENÚ LATERAL ADMINISTRATIVO
+========================================= */
+
+.sidebar-productos {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 235px;
+    background: #ffffff;
+    border-right: 1px solid #e8e9ec;
+    display: flex;
+    flex-direction: column;
+    z-index: 50;
+    overflow-y: auto;
+}
+
+.sidebar-titulo {
+    padding: 30px 22px 18px;
+}
+
+.sidebar-etiqueta {
+    font-size: 10px;
+    font-weight: 800;
+    color: #9a9da5;
+    letter-spacing: 1.5px;
+}
+
+.sidebar-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding: 0 12px;
+}
+
+.sidebar-menu a {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    padding: 14px 16px;
+    border-radius: 9px;
+    text-decoration: none;
+    color: #60646e;
+    font-size: 13px;
+    font-weight: 600;
+    transition: all 0.2s;
+}
+
+.sidebar-menu a span {
+    font-size: 19px;
+    width: 24px;
+    text-align: center;
+}
+
+.sidebar-menu a:hover {
+    background: #f3f4f6;
+    color: #202124;
+}
+
+.sidebar-menu a.activo {
+    background: #28282d;
+    color: #ffffff;
+}
+
+.sidebar-menu a.pendiente {
+    color: #a1a4ac;
+    cursor: default;
+}
+
+.sidebar-pie {
+    margin-top: auto;
+    padding: 22px;
+    border-top: 1px solid #eef0f2;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.sidebar-pie span {
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.sidebar-pie small {
+    font-size: 10px;
+    color: #9a9da5;
+}
+
+/* =========================================
+   AJUSTAR CONTENIDO AL MENÚ LATERAL
+========================================= */
+
+body {
+    padding-left: 235px;
+}
+
+.encabezado {
+    position: relative;
+    min-height: 88px;
+}
+
+.contenido {
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+.pie-pagina {
+    margin-top: 30px;
+}
+
+/* =========================================
+   DISEÑO RESPONSIVE
+========================================= */
+
+@media (max-width: 900px) {
+
+    body {
+        padding-left: 0;
+    }
+
+    .sidebar-productos {
+        position: static;
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid #e8e9ec;
+    }
+
+    .sidebar-titulo,
+    .sidebar-pie {
+        display: none;
+    }
+
+    .sidebar-menu {
+        flex-direction: row;
+        overflow-x: auto;
+        padding: 12px;
+    }
+
+    .sidebar-menu a {
+        flex-shrink: 0;
+        white-space: nowrap;
+    }
+}
+
+
+/* =========================================
+   CORRECCIÓN DEL MENÚ LATERAL
+========================================= */
+
+@media (min-width: 901px) {
+
+    .sidebar-productos {
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        height: 100vh;
+        width: 235px;
+    }
+
+    .sidebar-titulo {
+        padding-top: 35px;
+    }
+
+}
+
+/* =========================================
+   TARJETAS DE ESTADÍSTICAS
+========================================= */
+
+.estadisticas-productos {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 18px;
+    margin-bottom: 28px;
+}
+
+.estadistica-tarjeta {
+    background: #ffffff;
+    border: 1px solid #e7e8eb;
+    border-radius: 15px;
+    padding: 24px;
+    min-width: 0;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.025);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.estadistica-tarjeta:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+}
+
+.estadistica-icono {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    background: #f3f1ee;
+    color: #87613f;
+    font-size: 19px;
+    font-weight: 700;
+    margin-bottom: 18px;
+}
+
+.estadistica-tarjeta h3 {
+    font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 30px;
+    font-weight: 800;
+    color: #202124;
+    margin-bottom: 8px;
+    overflow-wrap: anywhere;
+}
+
+.estadistica-tarjeta p {
+    font-size: 13px;
+    font-weight: 700;
+    color: #33363c;
+    margin-bottom: 7px;
+}
+
+.estadistica-tarjeta small {
+    font-size: 11px;
+    color: #92969e;
+}
+
+@media (max-width: 1250px) {
+    .estadisticas-productos {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 600px) {
+    .estadisticas-productos {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* =========================================
+   GRÁFICAS DE INVENTARIO
+========================================= */
+
+.graficas-inventario {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.grafica-tarjeta {
+    background: #ffffff;
+    border: 1px solid #e7e8eb;
+    border-radius: 15px;
+    padding: 25px;
+    min-width: 0;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.025);
+}
+
+.grafica-encabezado {
+    margin-bottom: 25px;
+}
+
+.grafica-encabezado h3 {
+    font-size: 17px;
+    font-weight: 700;
+    margin-bottom: 7px;
+}
+
+.grafica-encabezado p {
+    font-size: 12px;
+    color: #92969e;
+}
+
+.grafica-contenedor {
+    position: relative;
+    width: 100%;
+    height: 300px;
+}
+
+@media (max-width: 1100px) {
+    .graficas-inventario {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* Tarjeta interactiva de existencias bajas */
+
+#tarjetaExistenciaBaja {
+    cursor: pointer;
+    transition: transform 0.25s ease,
+                box-shadow 0.25s ease;
+}
+
+#tarjetaExistenciaBaja:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.10);
+}
+
+#tarjetaExistenciaBaja:focus-visible {
+    outline: 3px solid #d89a55;
+    outline-offset: 3px;
+}
+
+
+
+/* =========================================
+   NOTIFICACIONES SWEETALERT2
+========================================= */
+
+.notificacion-panaderia {
+    border-radius: 20px !important;
+    padding: 25px !important;
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.15) !important;
+}
+
+.notificacion-panaderia .swal2-title {
+    font-size: 23px !important;
+    font-weight: 700 !important;
+}
+
+.notificacion-panaderia .swal2-html-container {
+    font-size: 15px !important;
+}
+
+.notificacion-panaderia .swal2-confirm {
+    border-radius: 10px !important;
+    padding: 12px 30px !important;
+    font-weight: 600 !important;
+}
+
+
+
+/* =========================================
+   FORMULARIO DE RECETAS
+========================================= */
+
+.modal-contenido-receta {
+    max-width: 650px;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+#contenedorIngredientesReceta {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin: 15px 0 20px;
+}
+
+.modal-contenido-receta h3 {
+    margin-top: 24px;
+    margin-bottom: 8px;
+}
+
+/* Botones seleccionados para recetas */
+
+.button-89 {
+    --b: 3px;
+    --s: .45em;
+    --color: #373B44;
+
+    padding: calc(.5em + var(--s))
+             calc(.9em + var(--s));
+
+    color: var(--color);
+    --_p: var(--s);
+
+    background:
+        conic-gradient(
+            from 90deg at var(--b) var(--b),
+            #0000 90deg,
+            var(--color) 0
+        )
+        var(--_p) var(--_p) /
+        calc(100% - var(--b) - 2*var(--_p))
+        calc(100% - var(--b) - 2*var(--_p));
+
+    transition: .3s linear,
+                color 0s,
+                background-color 0s;
+
+    outline: var(--b) solid #0000;
+    outline-offset: .6em;
+
+    font-size: 16px;
+    border: 0;
+    cursor: pointer;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+.button-89:hover,
+.button-89:focus-visible {
+    --_p: 0px;
+    outline-color: var(--color);
+    outline-offset: .05em;
+}
+
+.button-89:active {
+    background: var(--color);
+    color: #fff;
+}
+
+.button-89:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+
+.modal-producto[hidden] {
+    display: none !important;
+}
+
+
+/* Filas dinámicas de ingredientes */
+
+.fila-ingrediente-receta {
+    display: grid;
+    grid-template-columns: minmax(0, 2fr) minmax(0, 1fr) 40px;
+    gap: 10px;
+    align-items: center;
+}
+
+.fila-ingrediente-receta select,
+.fila-ingrediente-receta input {
+    width: 100%;
+    min-width: 0;
+    padding: 11px;
+    border: 1px solid #d9dce1;
+    border-radius: 9px;
+    background: #fff;
+}
+
+.btn-eliminar-ingrediente {
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 9px;
+    background: #fee2e2;
+    color: #b91c1c;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.btn-eliminar-ingrediente:hover {
+    background: #fecaca;
+}
+
+@media (max-width: 600px) {
+    .fila-ingrediente-receta {
+        grid-template-columns: minmax(0, 1fr) 90px 40px;
+        gap: 6px;
+    }
+}
+
+
+/* Botón para productos pendientes de receta */
+
+.btn-configurar-receta {
+    padding: 9px 13px;
+    margin: 4px;
+    border: 1px solid #d89a55;
+    border-radius: 8px;
+    background: #fff5e9;
+    color: #8b531d;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-configurar-receta:hover {
+    background: #d89a55;
+    color: #ffffff;
+    transform: translateY(-1px);
+}
+
+
+
+/* Botón para consultar recetas existentes */
+
+.btn-ver-receta {
+    padding: 9px 13px;
+    margin: 4px;
+    border: 1px solid #638a74;
+    border-radius: 8px;
+    background: #edf7f0;
+    color: #2d6846;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-ver-receta:hover {
+    background: #638a74;
+    color: white;
+    transform: translateY(-1px);
+}
+
+
+/* =====================================
+   VISUALIZACIÓN DE RECETAS
+===================================== */
+
+.detalle-receta-info {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+    margin: 18px 0 24px;
+}
+
+.detalle-receta-info p {
+    background: #f8f6f2;
+    border-radius: 10px;
+    padding: 14px;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    font-size: 13px;
+}
+
+.detalle-receta-info span {
+    font-size: 15px;
+    font-weight: 600;
+    color: #373b44;
+}
+
+.tabla-receta-contenedor {
+    overflow-x: auto;
+    margin-top: 15px;
+}
+
+.tabla-detalle-receta {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tabla-detalle-receta th,
+.tabla-detalle-receta td {
+    padding: 13px 12px;
+    text-align: left;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.tabla-detalle-receta th {
+    background: #f8f6f2;
+    color: #373b44;
+    font-size: 13px;
+}
+
+.tabla-detalle-receta td {
+    font-size: 13px;
+}
+
+.acciones-receta {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 24px;
+}
+
+@media (max-width: 600px) {
+    .detalle-receta-info {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Botón editar receta */
+
+.btn-editar-receta {
+    background-color: #d89a55;
+    color: #ffffff;
+    border: none;
+    border-radius: 7px;
+    padding: 8px 12px;
+    margin: 3px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.2s ease;
+}
+
+.btn-editar-receta:hover {
+    background-color: #b77b38;
+}
+
+
+.btn-editar-receta {
+    background-color: #d89a55;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 18px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.btn-editar-receta:hover {
+    background-color: #b77b38;
+}
+
+
+/* Selector del ingreso de existencias */
+
+#modalIngresarExistencias select {
+    display: block;
+    width: 100%;
+    min-height: 45px;
+    padding: 10px 15px;
+    background-color: #ffffff;
+    color: #222222;
+    border: 1px solid #cccccc;
+    border-radius: 8px;
+    appearance: auto;
+    -webkit-appearance: menulist;
+}
+
+#modalIngresarExistencias select option {
+    background-color: #ffffff;
+    color: #222222;
+}
+
+/* CORRECCIÓN DEL SELECT DE INGREDIENTES */
+
+#modalIngresarExistencias {
+    overflow: visible;
+}
+
+#modalIngresarExistencias .modal-contenido {
+    overflow: visible;
+}
+
+#modalIngresarExistencias #insumoIngreso {
+    display: block;
+    width: 100%;
+    height: 48px;
+    position: relative;
+    z-index: 10;
+    background: white;
+    color: #222;
+    appearance: auto;
+    -webkit-appearance: menulist;
+}
+
+#modalIngresarExistencias #insumoIngreso option {
+    display: block;
+    color: #222;
+    background: white;
+}
+
+/* Lista visible de ingredientes */
+
+#modalIngresarExistencias #insumoIngreso {
+    display: block;
+    width: 100%;
+    height: 230px;
+    min-height: 230px;
+    overflow-y: auto;
+    background: #ffffff;
+    color: #222222;
+    border: 1px solid #cccccc;
+    border-radius: 8px;
+    padding: 5px;
+    appearance: auto;
+}
+
+#modalIngresarExistencias #insumoIngreso option {
+    display: block;
+    padding: 10px;
+    color: #222222;
+    background: #ffffff;
+}
+
+#modalIngresarExistencias #insumoIngreso option:checked {
+    background: #373b44;
+    color: #ffffff;
+}

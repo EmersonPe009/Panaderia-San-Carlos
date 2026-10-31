@@ -1,0 +1,51 @@
+
+# Archivos generados por Maven
+target/
+build/
+dist/
+
+# Archivos privados de NetBeans
+nbproject/private/
+
+# Configuraciones de otros IDE
+.idea/
+.vscode/
+
+# Credenciales y archivos sensibles
+.env
+.env.*
+!.env.example
+*.key
+*.jks
+*.p12
+wallet/
+Wallet_*/
+
+# Archivos temporales
+*.log
+*.tmp
+
+
+.classpath
+.project
+.settings/
+
+# Archivos accidentales
+V_ID_ROL
+V_ID_SALIDA
+V_MENSAJE
+[[]Help
+'Administrador
+'admin'
+'PEGAR_AQUI_EL_HASH_GENERADO'
+classpath.txt
+
+# Configuración local de Oracle
+config.xml
+**/config.xml
+
+
+target/
+.classpath
+.project
+.settings/

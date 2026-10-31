@@ -1,0 +1,172 @@
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f4f6f9;
+    color: #253047;
+}
+
+.cabecera {
+    background: #23365a;
+    color: white;
+    padding: 24px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+}
+
+.cabecera h1 {
+    margin: 0 0 8px;
+}
+
+.cabecera p {
+    margin: 0;
+    opacity: .85;
+}
+
+.sucursal-identificador {
+    background: #ffffff22;
+    padding: 12px 18px;
+    border-radius: 10px;
+}
+
+.contenedor {
+    max-width: 1200px;
+    margin: 28px auto;
+    padding: 0 18px;
+}
+
+.estadisticas {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    margin-bottom: 22px;
+}
+
+.tarjeta,
+.panel {
+    background: white;
+    border-radius: 12px;
+    padding: 22px;
+    box-shadow: 0 3px 14px #0000000d;
+}
+
+.tarjeta h3 {
+    font-size: 15px;
+    color: #687385;
+    margin: 0 0 12px;
+}
+
+.tarjeta strong {
+    font-size: 32px;
+}
+
+.panel {
+    margin-bottom: 22px;
+}
+
+.panel-cabecera {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.panel h2 {
+    margin-top: 0;
+}
+
+.panel p {
+    color: #687385;
+}
+
+.campos {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+    margin: 18px 0;
+}
+
+label {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    font-weight: bold;
+}
+
+input,
+select {
+    padding: 12px;
+    border: 1px solid #ccd3df;
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+.tabla-contenedor {
+    overflow-x: auto;
+    margin: 18px 0;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    padding: 13px;
+    text-align: left;
+    border-bottom: 1px solid #e5e9f0;
+}
+
+th {
+    background: #f8f9fc;
+}
+
+.btn {
+    padding: 12px 18px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.btn-primario {
+    background: #244d87;
+    color: white;
+}
+
+.btn-secundario {
+    background: #e8edf5;
+    color: #253047;
+}
+
+.btn:disabled {
+    opacity: .6;
+    cursor: not-allowed;
+}
+
+.btn-eliminar {
+    color: #b42318;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+@media (max-width: 700px) {
+    .estadisticas,
+    .campos {
+        grid-template-columns: 1fr;
+    }
+
+    .cabecera,
+    .panel-cabecera {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
